@@ -1,0 +1,13 @@
+{
+ "updatedAt": "2026-10-29T14:40:28.571Z",
+ "leagueId": "j3rxu8e0mhspuuim",
+ "ok": {
+  "leagueInfo": true,
+  "standings": true,
+  "matchups": true,
+  "rosters": true,
+  "draftPicks": true,
+  "draftResults": true
+ },
+ "errors": {}
+}

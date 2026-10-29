@@ -1,0 +1,653 @@
+{
+ "matchups": [
+  {
+   "away": {
+    "teamName": "Washington State Winners",
+    "score": 962.1,
+    "gamesPlayed": 200,
+    "teamId": "exu2oyc7mhspuuiy"
+   },
+   "categories": [
+    {
+     "away": {
+      "display": "78",
+      "value": 78,
+      "points": 78
+     },
+     "name": "Runs Scored",
+     "shortName": "R",
+     "group": "Hitting",
+     "home": {
+      "display": "69",
+      "value": 69,
+      "points": 69
+     }
+    },
+    {
+     "away": {
+      "display": "61",
+      "value": 61,
+      "points": 18.3
+     },
+     "name": "Singles",
+     "shortName": "1B",
+     "group": "Hitting",
+     "home": {
+      "display": "91",
+      "value": 91,
+      "points": 27.3
+     }
+    },
+    {
+     "away": {
+      "display": "24",
+      "value": 24,
+      "points": 12
+     },
+     "name": "Doubles",
+     "shortName": "2B",
+     "group": "Hitting",
+     "home": {
+      "display": "27",
+      "value": 27,
+      "points": 13.5
+     }
+    },
+    {
+     "away": {
+      "display": "1",
+      "value": 1,
+      "points": 0.8
+     },
+     "name": "Triples",
+     "shortName": "3B",
+     "group": "Hitting",
+     "home": {
+      "display": "1",
+      "value": 1,
+      "points": 0.8
+     }
+    },
+    {
+     "away": {
+      "display": "20",
+      "value": 20,
+      "points": 20
+     },
+     "name": "Home Runs",
+     "shortName": "HR",
+     "group": "Hitting",
+     "home": {
+      "display": "20",
+      "value": 20,
+      "points": 20
+     }
+    },
+    {
+     "away": {
+      "display": "64",
+      "value": 64,
+      "points": 96
+     },
+     "name": "RBI",
+     "shortName": "RBI",
+     "group": "Hitting",
+     "home": {
+      "display": "86",
+      "value": 86,
+      "points": 129
+     }
+    },
+    {
+     "away": {
+      "display": "50",
+      "value": 50,
+      "points": 50
+     },
+     "name": "Walks",
+     "shortName": "BB",
+     "group": "Hitting",
+     "home": {
+      "display": "59",
+      "value": 59,
+      "points": 59
+     }
+    },
+    {
+     "away": {
+      "display": "147",
+      "value": 147,
+      "points": -147
+     },
+     "name": "Strikeouts",
+     "shortName": "SO",
+     "group": "Hitting",
+     "home": {
+      "display": "141",
+      "value": 141,
+      "points": -141
+     }
+    },
+    {
+     "away": {
+      "display": "13",
+      "value": 13,
+      "points": 14.3
+     },
+     "name": "Stolen Bases",
+     "shortName": "SB",
+     "group": "Hitting",
+     "home": {
+      "display": "8",
+      "value": 8,
+      "points": 8.8
+     }
+    },
+    {
+     "away": {
+      "display": "4",
+      "value": 4,
+      "points": -4.4
+     },
+     "name": "Caught Stealing",
+     "shortName": "CS",
+     "group": "Hitting",
+     "home": {
+      "display": "1",
+      "value": 1,
+      "points": -1.1
+     }
+    },
+    {
+     "away": {
+      "display": "192",
+      "value": 192,
+      "points": 192
+     },
+     "name": "Total Bases",
+     "shortName": "TB",
+     "group": "Hitting",
+     "home": {
+      "display": "228",
+      "value": 228,
+      "points": 228
+     }
+    },
+    {
+     "away": {
+      "display": "45",
+      "value": 45,
+      "points": 22.5
+     },
+     "name": "Extra Base Hits",
+     "shortName": "XBH",
+     "group": "Hitting",
+     "home": {
+      "display": "48",
+      "value": 48,
+      "points": 24
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Grand Slams",
+     "shortName": "Sl",
+     "group": "Hitting",
+     "home": {
+      "display": "1",
+      "value": 1,
+      "points": 1
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Hit For The Cycle",
+     "shortName": "CYC",
+     "group": "Hitting",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "display": "1",
+      "value": 1,
+      "points": 1
+     },
+     "name": "Intentional Walks",
+     "shortName": "IBB",
+     "group": "Hitting",
+     "home": {
+      "display": "4",
+      "value": 4,
+      "points": 4
+     }
+    },
+    {
+     "away": {
+      "display": "5",
+      "value": 5,
+      "points": 5
+     },
+     "name": "Hit By Pitches",
+     "shortName": "HBP",
+     "group": "Hitting",
+     "home": {
+      "display": "5",
+      "value": 5,
+      "points": 5
+     }
+    },
+    {
+     "away": {
+      "display": "1",
+      "value": 1,
+      "points": 0.7
+     },
+     "name": "Sacrifice Hits",
+     "shortName": "SH",
+     "group": "Hitting",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "display": "3",
+      "value": 3,
+      "points": 2.1
+     },
+     "name": "Sacrifice Flies",
+     "shortName": "SF",
+     "group": "Hitting",
+     "home": {
+      "display": "4",
+      "value": 4,
+      "points": 2.8
+     }
+    },
+    {
+     "away": {
+      "display": "10",
+      "value": 10,
+      "points": -5
+     },
+     "name": "Grounded Into Double Plays",
+     "shortName": "GIDP",
+     "group": "Hitting",
+     "home": {
+      "display": "10",
+      "value": 10,
+      "points": -5
+     }
+    },
+    {
+     "away": {
+      "display": "4",
+      "value": 4,
+      "points": -6
+     },
+     "name": "Errors",
+     "shortName": "E",
+     "group": "Hitting",
+     "home": {
+      "display": "3",
+      "value": 3,
+      "points": -4.5
+     }
+    },
+    {
+     "away": {
+      "display": "38",
+      "value": 38,
+      "points": 38
+     },
+     "name": "Double Plays Fielded",
+     "shortName": "DP",
+     "group": "Hitting",
+     "home": {
+      "display": "21",
+      "value": 21,
+      "points": 21
+     }
+    },
+    {
+     "away": {
+      "display": "101",
+      "value": 101,
+      "points": 10.1
+     },
+     "name": "Assists",
+     "shortName": "A",
+     "group": "Hitting",
+     "home": {
+      "display": "93",
+      "value": 93,
+      "points": 9.3
+     }
+    },
+    {
+     "away": {
+      "display": "1",
+      "value": 1,
+      "points": 1.5
+     },
+     "name": "Assists by Outfielders",
+     "shortName": "AOF",
+     "group": "Hitting",
+     "home": {
+      "display": "2",
+      "value": 2,
+      "points": 3
+     }
+    },
+    {
+     "away": {
+      "display": "7",
+      "value": 7,
+      "points": 3.5
+     },
+     "name": "Game Winning RBI",
+     "shortName": "GWRBI",
+     "group": "Hitting",
+     "home": {
+      "display": "12",
+      "value": 12,
+      "points": 6
+     }
+    },
+    {
+     "away": {
+      "display": "157",
+      "value": 156.99999996999998,
+      "points": 659.4
+     },
+     "name": "Innings Pitched",
+     "shortName": "IP",
+     "group": "Pitching",
+     "home": {
+      "display": "145.2",
+      "value": 145.66666668,
+      "points": 611.8
+     }
+    },
+    {
+     "away": {
+      "display": "8",
+      "value": 8,
+      "points": 24
+     },
+     "name": "Wins",
+     "shortName": "W",
+     "group": "Pitching",
+     "home": {
+      "display": "10",
+      "value": 10,
+      "points": 30
+     }
+    },
+    {
+     "away": {
+      "display": "14",
+      "value": 14,
+      "points": -42
+     },
+     "name": "Losses",
+     "shortName": "L",
+     "group": "Pitching",
+     "home": {
+      "display": "8",
+      "value": 8,
+      "points": -24
+     }
+    },
+    {
+     "away": {
+      "display": "15",
+      "value": 15,
+      "points": 75
+     },
+     "name": "Saves",
+     "shortName": "SV",
+     "group": "Pitching",
+     "home": {
+      "display": "8",
+      "value": 8,
+      "points": 40
+     }
+    },
+    {
+     "away": {
+      "display": "5",
+      "value": 5,
+      "points": -10
+     },
+     "name": "Blown Saves",
+     "shortName": "BS",
+     "group": "Pitching",
+     "home": {
+      "display": "3",
+      "value": 3,
+      "points": -6
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Complete Games",
+     "shortName": "CG",
+     "group": "Pitching",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "display": "7",
+      "value": 7,
+      "points": 21
+     },
+     "name": "Quality Starts",
+     "shortName": "QS",
+     "group": "Pitching",
+     "home": {
+      "display": "8",
+      "value": 8,
+      "points": 24
+     }
+    },
+    {
+     "away": {
+      "display": "143",
+      "value": 143,
+      "points": -143
+     },
+     "name": "Hits Allowed",
+     "shortName": "H",
+     "group": "Pitching",
+     "home": {
+      "display": "120",
+      "value": 120,
+      "points": -120
+     }
+    },
+    {
+     "away": {
+      "display": "69",
+      "value": 69,
+      "points": -138
+     },
+     "name": "Earned Runs Allowed",
+     "shortName": "ER",
+     "group": "Pitching",
+     "home": {
+      "display": "50",
+      "value": 50,
+      "points": -100
+     }
+    },
+    {
+     "away": {
+      "display": "55",
+      "value": 55,
+      "points": -55
+     },
+     "name": "Walks Allowed",
+     "shortName": "BB",
+     "group": "Pitching",
+     "home": {
+      "display": "45",
+      "value": 45,
+      "points": -45
+     }
+    },
+    {
+     "away": {
+      "display": "169",
+      "value": 169,
+      "points": 169
+     },
+     "name": "Strikeouts Pitched",
+     "shortName": "K",
+     "group": "Pitching",
+     "home": {
+      "display": "135",
+      "value": 135,
+      "points": 135
+     }
+    },
+    {
+     "away": {
+      "display": "6",
+      "value": 6,
+      "points": 24
+     },
+     "name": "Holds",
+     "shortName": "HLD",
+     "group": "Pitching",
+     "home": {
+      "display": "14",
+      "value": 14,
+      "points": 56
+     }
+    },
+    {
+     "away": {
+      "display": "14",
+      "value": 14,
+      "points": -14
+     },
+     "name": "Home Runs Allowed",
+     "shortName": "HR",
+     "group": "Pitching",
+     "home": {
+      "display": "14",
+      "value": 14,
+      "points": -14
+     }
+    },
+    {
+     "away": {
+      "display": "3",
+      "value": 3,
+      "points": 2.1
+     },
+     "name": "Pickoffs",
+     "shortName": "PKO",
+     "group": "Pitching",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Balks",
+     "shortName": "BK",
+     "group": "Pitching",
+     "home": {
+      "display": "1",
+      "value": 1,
+      "points": -0.3
+     }
+    },
+    {
+     "away": {
+      "display": "4",
+      "value": 4,
+      "points": -0.8
+     },
+     "name": "Wild Pitches",
+     "shortName": "WP",
+     "group": "Pitching",
+     "home": {
+      "display": "2",
+      "value": 2,
+      "points": -0.4
+     }
+    },
+    {
+     "away": {
+      "display": "13",
+      "value": 13,
+      "points": -13
+     },
+     "name": "Hit Batsmen",
+     "shortName": "HB",
+     "group": "Pitching",
+     "home": {
+      "display": "7",
+      "value": 7,
+      "points": -7
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Shutouts",
+     "shortName": "SHO",
+     "group": "Pitching",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "No Hitters",
+     "shortName": "NH",
+     "group": "Pitching",
+     "home": {
+      "points": 0
+     }
+    },
+    {
+     "away": {
+      "points": 0
+     },
+     "name": "Perfect Games",
+     "shortName": "PG",
+     "group": "Pitching",
+     "home": {
+      "points": 0
+     }
+    }
+   ],
+   "home": {
+    "teamName": "Portland Pioneers",
+    "score": 1060,
+    "gamesPlayed": 194,
+    "teamId": "tmbonzbmmhspuuiy"
+   }
+  }
+ ],
+ "period": 24
+}
