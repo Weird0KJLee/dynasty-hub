@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dynasty Hub</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--text:#1c1c1a;--muted:#6b6b66;--accent:#1d6b45;--accent-t:#fff;--line:#e4e2da;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141513;--card:#1e201d;--text:#ecebe6;--muted:#9a9a92;--accent:#4cc38a;--accent-t:#0d1f16;--line:#2e302b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141513;--card:#1e201d;--text:#ecebe6;--muted:#9a9a92;--accent:#4cc38a;--accent-t:#0d1f16;--line:#2e302b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.muted{color:var(--muted)}
+.tab{padding:.5rem .9rem;border-radius:999px;border:1px solid var(--line);white-space:nowrap;font-size:.9rem;background:var(--card)}
+.tab.on{background:var(--accent);color:var(--accent-t);border-color:var(--accent)}
+.row{border-top:1px solid var(--line)}
+.pill{font-size:.7rem;padding:.1rem .45rem;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+th{font-weight:500;color:var(--muted);font-size:.75rem;text-align:left;padding:.5rem .6rem}
+td{padding:.55rem .6rem;font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="max-w-3xl mx-auto px-4 pb-10">
+  <header class="pt-5 pb-3">
+    <h1 class="text-2xl font-semibold">Dynasty Hub</h1>
+    <p class="muted text-sm">Sample data · connect Fantrax to go live</p>
+  </header>
+  <nav id="tabs" class="flex gap-2 overflow-x-auto pb-3"></nav>
+  <main id="view" class="mt-2"></main>
+</div>
+<script>
+const DATA = {
+  teams: [
+    {id:1,name:"Bleacher Creatures",mgr:"Sam",w:14,l:6,t:1,pf:152},
+    {id:2,name:"Dingers & Dragons",mgr:"Jess",w:12,l:8,t:1,pf:141},
+    {id:3,name:"Mound Visits",mgr:"Priya",w:11,l:9,t:1,pf:138},
+    {id:4,name:"Rally Caps",mgr:"Tom",w:9,l:11,t:1,pf:126},
+    {id:5,name:"Seam Heads",mgr:"Alex",w:8,l:13,t:0,pf:119},
+    {id:6,name:"Pitch Clock Heroes",mgr:"Dana",w:6,l:15,t:0,pf:104}
+  ],
+  week: 21,
+  matchups: [
+    {a:1,b:6,ca:8,cb:5,tie:1},{a:2,b:5,ca:6,cb:7,tie:1},{a:3,b:4,ca:9,cb:4,tie:1}
+  ],
+  rosters: {
+    1:[{n:"Elly De La Cruz",pos:"SS",age:24,sal:9,yrs:4},{n:"Paul Skenes",pos:"SP",age:24,sal:12,yrs:5},{n:"Top Prospect A",pos:"OF",age:19,sal:1,yrs:3,min:true}],
+    2:[{n:"Gunnar Henderson",pos:"SS",age:25,sal:14,yrs:3},{n:"Tarik Skubal",pos:"SP",age:29,sal:11,yrs:2},{n:"Top Prospect B",pos:"SP",age:20,sal:1,yrs:3,min:true}],
+    3:[{n:"Julio Rodríguez",pos:"OF",age:25,sal:13,yrs:4},{n:"Corbin Carroll",pos:"OF",age:25,sal:10,yrs:4},{n:"Top Prospect C",pos:"C",age:19,sal:1,yrs:3,min:true}],
+    4:[{n:"Bobby Witt Jr.",pos:"SS",age:26,sal:15,yrs:2},{n:"Veteran 1B",pos:"1B",age:33,sal:4,yrs:1}],
+    5:[{n:"Jackson Chourio",pos:"OF",age:22,sal:6,yrs:5},{n:"Veteran SP",pos:"SP",age:32,sal:7,yrs:1}],
+    6:[{n:"Rebuild Piece",pos:"2B",age:23,sal:2,yrs:3},{n:"Top Prospect D",pos:"SS",age:18,sal:1,yrs:3,min:true}]
+  },
+  picks: [
+    {y:2027,r:1,owner:6,orig:6},{y:2027,r:1,owner:1,orig:5},{y:2027,r:2,owner:5,orig:5},
+    {y:2027,r:2,owner:3,orig:6},{y:2028,r:1,owner:6,orig:6},{y:2028,r:1,owner:2,orig:4}
+  ],
+  moves: [
+    {d:"Oct 25",t:"Sam traded Top Prospect A to Alex for a 2027 1st"},
+    {d:"Oct 22",t:"Jess claimed a free agent SP off waivers"},
+    {d:"Oct 19",t:"Dana dropped a veteran OF"}
+  ],
+  history: [
+    {y:2025,champ:"Mound Visits",ru:"Bleacher Creatures"},
+    {y:2024,champ:"Dingers & Dragons",ru:"Rally Caps"},
+    {y:2023,champ:"Bleacher Creatures",ru:"Seam Heads"}
+  ]
+};
+const T = id => DATA.teams.find(t=>t.id===id);
+const TABS = [["standings","Standings"],["matchups","Matchups"],["rosters","Rosters"],["picks","Picks"],["moves","Moves"],["history","History"]];
+let tab = "standings", team = 1;
+const pct = t => ((t.w+t.t/2)/(t.w+t.l+t.t)).toFixed(3).replace(/^0/,"");
+
+const V = {
+  standings(){
+    const rows=[...DATA.teams].sort((a,b)=>b.w-a.w).map((t,i)=>`<tr class="row"><td class="muted">${i+1}</td><td><div class="font-medium">${t.name}</div><div class="muted text-xs">${t.mgr}</div></td><td>${t.w}-${t.l}-${t.t}</td><td>${pct(t)}</td><td>${t.pf}</td></tr>`).join("");
+    return `<div class="card overflow-x-auto"><table class="w-full"><tr><th>#</th><th>Team</th><th>W-L-T</th><th>Pct</th><th>PF</th></tr>${rows}</table></div>`;
+  },
+  matchups(){
+    return `<p class="muted text-sm mb-2">Week ${DATA.week}</p>`+DATA.matchups.map(m=>{
+      const a=T(m.a),b=T(m.b),aw=m.ca>m.cb;
+      return `<div class="card p-4 mb-3"><div class="flex justify-between ${aw?"font-semibold":"muted"}"><span>${a.name}</span><span>${m.ca}</span></div><div class="flex justify-between mt-1 ${!aw?"font-semibold":"muted"}"><span>${b.name}</span><span>${m.cb}</span></div><div class="muted text-xs mt-2">${m.tie} categories tied</div></div>`}).join("");
+  },
+  rosters(){
+    const sel=DATA.teams.map(t=>`<option value="${t.id}" ${t.id===team?"selected":""}>${t.name}</option>`).join("");
+    const rows=DATA.rosters[team].map(p=>`<div class="row px-4 py-3 flex justify-between items-center"><div><div class="font-medium">${p.n}</div><div class="muted text-xs">${p.pos} · age ${p.age}${p.min?" · <span class='pill'>Minors</span>":""}</div></div><div class="text-right text-sm"><div>$${p.sal}</div><div class="muted text-xs">${p.yrs} yr${p.yrs>1?"s":""}</div></div></div>`).join("");
+    const cap=DATA.rosters[team].reduce((s,p)=>s+p.sal,0);
+    return `<select id="sel" class="card w-full p-3 mb-3" style="color:var(--text)">${sel}</select><div class="card"><div class="px-4 py-3 text-sm muted">Committed salary: $${cap}</div>${rows}</div>`;
+  },
+  picks(){
+    return `<div class="card">`+DATA.picks.map((p,i)=>`<div class="${i?"row":""} px-4 py-3 flex justify-between"><div><span class="font-medium">${p.y} Round ${p.r}</span>${p.owner!==p.orig?` <span class="pill">via ${T(p.orig).name}</span>`:""}</div><div class="muted text-sm">${T(p.owner).name}</div></div>`).join("")+`</div>`;
+  },
+  moves(){
+    return `<div class="card">`+DATA.moves.map((m,i)=>`<div class="${i?"row":""} px-4 py-3"><div class="muted text-xs">${m.d}</div><div>${m.t}</div></div>`).join("")+`</div>`;
+  },
+  history(){
+    return `<div class="card">`+DATA.history.map((h,i)=>`<div class="${i?"row":""} px-4 py-3 flex justify-between"><span class="font-semibold">${h.y}</span><div class="text-right"><div>🏆 ${h.champ}</div><div class="muted text-xs">Runner-up: ${h.ru}</div></div></div>`).join("")+`</div>`;
+  }
+};
+function render(){
+  document.getElementById("tabs").innerHTML=TABS.map(([k,l])=>`<button class="tab ${k===tab?"on":""}" data-k="${k}">${l}</button>`).join("");
+  document.getElementById("view").innerHTML=V[tab]();
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{tab=b.dataset.k;render()});
+  const s=document.getElementById("sel"); if(s) s.onchange=e=>{team=+e.target.value;render()};
+}
+const h=location.hash.slice(1); if(TABS.some(t=>t[0]===h)) tab=h;
+render();
+</script>
+</body>
+</html>
